@@ -103,7 +103,7 @@ public class ATM implements Serializable {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			Connection connection = DriverManager.getConnection(
-					"jdbc:oracle:thin:@oracle.cccswnvlzm9u.us-east-2.rds.amazonaws.com:1521:orcl", "admin", "12345678");
+					"jdbc:oracle:thin:@localhost", "admin", "12345678");
 			connection.setAutoCommit(false);
 			String query = "insert into BankUser(firstName,lastName,age,salary)values (?,?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(query);
